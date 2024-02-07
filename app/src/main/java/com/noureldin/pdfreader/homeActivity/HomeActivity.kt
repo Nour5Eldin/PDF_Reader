@@ -1,5 +1,6 @@
 package com.noureldin.pdfreader.homeActivity
 
+
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -49,7 +50,6 @@ class HomeActivity : AppCompatActivity() {
                 READ_STORAGE_PERMISSION_CODE
             )
         }
-
     }
 
     private fun loadPdfFiles() {
@@ -57,15 +57,16 @@ class HomeActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         pdfFiles = getPdfFilesFromStorage()
-        pdfListAdapter = PdfListAdapter(pdfFiles)
-
-        recyclerView.adapter = pdfListAdapter
+        runOnUiThread {
+            pdfListAdapter = PdfListAdapter(pdfFiles)
+            recyclerView.adapter = pdfListAdapter
+            progressBar.visibility = ProgressBar.GONE
+        }
 
         pdfListAdapter.setOnItemClickListener { position ->
             val selectedPdf = pdfFiles[position]
             openPdfFragment(selectedPdf)
         }
-        progressBar.visibility = ProgressBar.GONE
     }
 
     private fun openPdfFragment(pdfModel: PdfModel) {
