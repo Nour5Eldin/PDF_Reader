@@ -9,4 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FF0000</color>
     <color name="grey">#666565</color>
+    <color name="secondary_color">#393636</color>
+    <color name="background">#FFFFFFFF</color>
+    <color name="ToolBarBackground">@color/red</color>
+    <color name="textView">@color/black</color>
+
 </resources>

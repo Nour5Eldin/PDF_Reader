@@ -2,4 +2,7 @@
 <resources>
     <color name="red">#7F0000</color>
     <color name="black">#181818</color>
+    <color name="background">#181818</color>
+    <color name="ToolBarBackground">@color/red</color>
+    <color name="textView">@color/white</color>
 </resources>

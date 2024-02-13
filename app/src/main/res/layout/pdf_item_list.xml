@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
-    app:cardCornerRadius="10dp"
-    android:elevation="8dp"
-    app:cardBackgroundColor="@color/white"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    app:cardCornerRadius="12dp"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@color/black">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <ImageView
-            android:id="@+id/file_img"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/pdf_file"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:id="@+id/imageView"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="15dp"
+            app:srcCompat="@drawable/ic_launcher"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -24,56 +27,46 @@
             android:id="@+id/file_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="File Name.Pdf "
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:layout_marginEnd="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/imageView"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Pdf File Name"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@id/imageView"
             app:layout_constraintTop_toTopOf="parent"/>
         <TextView
-            android:id="@+id/file_time"
+            android:id="@+id/file_path"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="24-09-2024"
-            android:textSize="14sp"
-            android:textColor="@color/grey"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintStart_toEndOf="@id/file_img"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-        <View
-            android:id="@+id/dot"
-            android:layout_width="4dp"
-            android:layout_height="4dp"
-            android:background="@color/black"
-            android:layout_marginBottom="15dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/file_time"
-            app:layout_constraintEnd_toStartOf="@id/file_size"/>
-        <TextView
-            android:id="@+id/file_size"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="00.0KB"
-            android:textSize="14sp"
-            android:textColor="@color/grey"
-            android:layout_marginStart="10dp"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintStart_toEndOf="@id/file_time"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
+            android:layout_below="@id/file_name"
+            android:layout_marginEnd="11dp"
+            android:layout_toEndOf="@id/imageView"
+            android:fontFamily="@font/poppins"
+            android:text="/storage/0/sample/filepath.pdf"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/imageView"
+            app:layout_constraintTop_toBottomOf="@id/file_name"/>
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/menu_dots"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="5dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
+            android:id="@+id/share"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="15dp"
+            app:srcCompat="@drawable/ic_share"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/file_path"
+            android:layout_marginTop="5dp"
+            android:background="@color/secondary_color"
+            app:layout_constraintTop_toBottomOf="@id/file_path"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
